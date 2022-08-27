@@ -4,13 +4,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 .container {
-    max-width: 1210px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
+  max-width: 1210px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px
 }
 
 a:hover,
 button:hover {
-    cursor: pointer;
+  cursor: pointer
+}
+
+::selection {
+  background: #f2d22d;
+  color: #000
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 2px
+}
+
+::-webkit-scrollbar-thumb {
+  background: padding-box content-box #fff;
+  border-radius: 10px;
+  border: 6px solid #f2d22d
 }

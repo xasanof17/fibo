@@ -34,4 +34,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 Project picture:
 
-[![image]('./public/fiboscreen.png')]
+[![fiboscreen.png](https://i.postimg.cc/mkPb0kWZ/fiboscreen.png)](https://postimg.cc/CnVT8FK9)

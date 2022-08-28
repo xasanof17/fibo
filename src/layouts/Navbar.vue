@@ -60,21 +60,20 @@
         </div>
       </div>
     </div>
-    <nav
-      class="bg-white py-4 sm:py-5 md:py-6 shadow-lightWhite"
-      v-on:scroll="navScroll"
-    >
+    <nav class="bg-white py-4 sm:py-5 md:py-6 shadow-lightWhite nav">
       <!-- shadow-lg -->
       <div class="container">
         <div class="flex items-center justify-between">
           <!-- space-x-5 -->
-          <div class="md:hidden flex items-center justify-center">
+          <div class="flex items-center justify-center nav-logo">
             <router-link to="/">
+              <!-- <div> -->
               <img
                 :src="[images.logo]"
                 alt="logo"
                 class="pointer-events-none"
               />
+              <!-- </div> -->
             </router-link>
           </div>
           <ul class="hidden md:flex space-x-3 lg:space-x-6">
@@ -95,7 +94,7 @@
                 >998 90 019 85 05</span
               >
             </a>
-            <button class="bg-transparent hidden md:block">
+            <button class="bg-transparent hidden md:block signup">
               <span class="text-gray font-bold text-sm">Войти</span>
             </button>
             <button
@@ -140,14 +139,24 @@ export default {
     return {
       images: images,
       links: links,
+      // scroll: null,
     };
   },
   created() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.onNavScroll);
   },
   methods: {
-    navScroll() {
-      console.log(window.scrollY);
+    onNavScroll() {
+      let y = window.scrollY;
+      let nav = document.querySelector(".nav");
+      let logo = document.querySelector(".nav-logo");
+      let btn = document.querySelector(".signup");
+      btn.classList.add("block");
+      if (y === 6) {
+        nav.style = `position:fixed; top:0; left:0; z-index: 11; width: 100%`;
+        logo.classList.remove("hidden");
+        logo.classList.add("flex");
+      }
     },
     onClick() {
       console.log("clicked");

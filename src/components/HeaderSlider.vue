@@ -1,21 +1,21 @@
 <template lang="">
-  <section class="bg-yellow h-[300px]">
-    <div class="container">
-      <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
-        <SplideSlide>
-          <img src="image1.jpg" alt="Sample 1" />
-        </SplideSlide>
-        <SplideSlide>
-          <img src="image2.jpg" alt="Sample 2" />
-        </SplideSlide>
-        <SplideSlide>
-          <img src="image2.jpg" alt="Sample 2" />
-        </SplideSlide>
-        <SplideSlide>
-          <img src="image2.jpg" alt="Sample 2" />
-        </SplideSlide>
-      </Splide>
-    </div>
+  <section class="bg-yellow">
+    <!-- <div class="container"> -->
+    <Splide :options="options" aria-label="fibo pizzas" class="h-full">
+      <SplideSlide>
+        <img src="@/assets/img/slide1.svg" alt="Sample 1" class="h-[300px]" />
+      </SplideSlide>
+      <SplideSlide>
+        <img src="@/assets/img/slide1.svg" alt="Sample 2" />
+      </SplideSlide>
+      <SplideSlide>
+        <img src="@/assets/img/slide1.svg" alt="Sample 2" />
+      </SplideSlide>
+      <SplideSlide>
+        <img src="@/assets/img/slide1.svg" alt="Sample 2" />
+      </SplideSlide>
+    </Splide>
+    <!-- </div> -->
   </section>
 </template>
 <script>
@@ -34,6 +34,14 @@ export default {
   components: {
     Splide,
     SplideSlide,
+  },
+  setup() {
+    const options = {
+      rewind: true,
+      gap: "1rem",
+    };
+
+    return { options };
   },
 };
 </script>
